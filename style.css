@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 70px;
+    background-color: rgb(148, 148, 148);
+}
+
+.game-container{
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    row-gap: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-image: linear-gradient(rgb(98, 97, 97), rgb(45, 45, 45) );
+}
+
+.cards-container{
+    display: grid;
+    grid-template-rows: 125px 125px 125px;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-gap: 20px 10px;
+    place-items: center;
+}
+
+.heading-container{
+    text-align: center;
+}
+
+.heading{
+    color:whitesmoke;
+    text-shadow: 2px 2px 5px black;
+}
+
+.game-heading{
+    color:whitesmoke;
+    text-shadow: 2px 2px 5px black;
+}
+
+.card{
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.outline-image{
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 125px;
+    width: 125px;
+}
+
+.card-image{
+    height: 125px;
+    width: 125px;
+    transform: rotateY(90deg); 
+    transition: all ease-in 0.25s;
+}
+
+.progress-container{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 50px 0 20px 0;
+}
+
+.move-counter{
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    color: white;
+    text-shadow: 2px 2px 5px white;
+}
+
+.restart-button{
+    padding: 10px 20px;
+    background-color:gray;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px black;
+}
+
+.restart-button:hover{
+    background-color: transparent;
+    border: 1px solid #2c2c2c;
+    color:white;
+}
+
+/* Dynamic classes that are being added by JavaScript */
+.toggled .card-image { 
+    transform: rotateY(0deg); 
+    transition-delay: 0.25s; 
+} 
+
+.item .outline-image { 
+    transition: all ease-in 0.25s; 
+    transition-delay: 0.25s; 
+} 
+  
+.toggled .outline-image { 
+    transform: rotateY(90deg); 
+    transition-delay: 0s; 
+}
+
+@media screen and (max-width: 767px) {
+    .game-container{
+        width: 100%;
+    }
+    
+    .cards-container{
+        grid-template-rows: 125px 125px 125px 125px;
+        grid-template-columns: 33% 33% 33%;
+        grid-gap: 10px 10px;
+    }
+
+    .outline-image{
+        height: 100px;
+        width: 100px;
+    }
+    
+    .card-image{
+        height: 100px;
+        width: 100px;
+    }
+
+    .progress-container{
+        margin: 10px 0 10px 0;
+    }
+    
+}
